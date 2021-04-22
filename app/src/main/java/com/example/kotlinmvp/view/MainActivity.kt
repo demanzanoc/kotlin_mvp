@@ -11,7 +11,6 @@ import com.example.kotlinmvp.interfaces.IUserPresenter
 import com.example.kotlinmvp.interfaces.IUserView
 import com.example.kotlinmvp.presenter.UserPresenter
 import es.dmoral.toasty.Toasty
-import java.security.AccessControlContext
 
 class MainActivity : AppCompatActivity(), IUserView {
 
@@ -26,7 +25,7 @@ class MainActivity : AppCompatActivity(), IUserView {
         setContentView(R.layout.activity_main)
 
         initElements()
-        login()
+        onLoginClick()
     }
 
     private fun initElements() {
@@ -37,8 +36,10 @@ class MainActivity : AppCompatActivity(), IUserView {
         btLogin = findViewById(R.id.btLogin)
     }
 
-    private fun login() {
-        presenter.login(etEmail.text.toString(), etPassword.text.toString())
+    private fun onLoginClick() {
+        btLogin.setOnClickListener {
+            presenter.login(etEmail.text.toString(), etPassword.text.toString())
+        }
     }
 
     override fun showLoginResult(message: String) {

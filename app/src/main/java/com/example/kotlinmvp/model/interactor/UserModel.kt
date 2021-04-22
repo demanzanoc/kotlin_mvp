@@ -1,8 +1,8 @@
-package com.example.kotlinmvp.model
+package com.example.kotlinmvp.model.interactor
 
 import android.text.TextUtils
 import android.util.Patterns
-import com.example.kotlinmvp.entities.User
+import com.example.kotlinmvp.model.entities.User
 import com.example.kotlinmvp.interfaces.IUserModel
 import com.example.kotlinmvp.interfaces.IUserPresenter
 import com.example.kotlinmvp.presenter.UserPresenter
