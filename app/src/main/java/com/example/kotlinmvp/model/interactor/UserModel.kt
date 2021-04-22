@@ -7,7 +7,7 @@ import com.example.kotlinmvp.interfaces.IUserModel
 import com.example.kotlinmvp.interfaces.IUserPresenter
 import com.example.kotlinmvp.presenter.UserPresenter
 
-class UserModel (presenter: UserPresenter): IUserModel{
+class UserModel(presenter: UserPresenter) : IUserModel {
 
     private val presenter: IUserPresenter = presenter
 
@@ -15,10 +15,11 @@ class UserModel (presenter: UserPresenter): IUserModel{
         val user = User(email, password)
         if (!TextUtils.isEmpty(user.email) &&
             Patterns.EMAIL_ADDRESS.matcher(user.email).matches() &&
-            user.password.length > 6) {
-            presenter.showLoginResult("Login is successful")
+            user.password.length > 6
+        ) {
+            presenter.showSuccessLogin("Login is successful")
         } else {
-            presenter.showLoginResult("Login is failure")
+            presenter.showFailedLogin("Login is failure")
         }
     }
 }

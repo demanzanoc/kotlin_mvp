@@ -14,7 +14,7 @@ import es.dmoral.toasty.Toasty
 
 class MainActivity : AppCompatActivity(), IUserView {
 
-    private lateinit var presenter : IUserPresenter
+    private lateinit var presenter: IUserPresenter
     private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
     private lateinit var btLogin: Button
@@ -42,7 +42,13 @@ class MainActivity : AppCompatActivity(), IUserView {
         }
     }
 
-    override fun showLoginResult(message: String) {
-        Toasty.info(context, message, Toast.LENGTH_LONG).show()
+    override fun showSuccessLogin(message: String) {
+        //Toasty.info(context, message, Toast.LENGTH_LONG).show()
+        Toasty.success(context, message, Toast.LENGTH_LONG).show()
+    }
+
+    override fun showFailedLogin(message: String) {
+        //Toasty.info(context, message, Toast.LENGTH_LONG).show()
+        Toasty.error(context, message, Toast.LENGTH_LONG).show()
     }
 }
